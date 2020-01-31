@@ -4,20 +4,18 @@
 
 // Вариант 1
 
-// Подскажите пожалуйста, возможно есть еще вариант проще, возможно я что то упустил?
-
-const findBestEmployee = function(employees) {
-  const values = Object.keys(employees);
-  let greastestValue = 0;
-  let greastestEmploee = '';
-  for (const key of values) {
-    if (employees[key] > greastestValue) {
-      greastestValue = employees[key];
-      greastestEmploee = key;
-    }
-  }
-  return greastestEmploee;
-};
+// const findBestEmployee = function(employees) {
+//   const values = Object.keys(employees);
+//   let greastestValue = 0;
+//   let greastestEmploee = '';
+//   for (const key of values) {
+//     if (employees[key] > greastestValue) {
+//       greastestValue = employees[key];
+//       greastestEmploee = key;
+//     }
+//   }
+//   return greastestEmploee;
+// };
 
 // Вариант 2
 
@@ -40,6 +38,21 @@ const findBestEmployee = function(employees) {
 //   }
 //   return greastestEmploee;
 // };
+
+// Вариант 3
+
+// Меня осенило после второго вебинара. Решил не удалять предыдущие варианты.
+
+const findBestEmployee = function(employees) {
+  const greastestValue = Math.max(...Object.values(employees));
+  let greastestEmploee = [];
+  for (const key of Object.keys(employees)) {
+    if (employees[key] === greastestValue) {
+      greastestEmploee.push(key);
+    }
+  }
+  return greastestEmploee;
+};
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
