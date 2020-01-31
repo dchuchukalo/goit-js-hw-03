@@ -6,6 +6,7 @@ const countProps = function(obj) {
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */
+
 console.log(countProps({})); // 0
 
 console.log(countProps({ name: 'Mango', age: 2 })); // 2

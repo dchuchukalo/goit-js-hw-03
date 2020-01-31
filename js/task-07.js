@@ -43,7 +43,7 @@ const account = {
   },
 
   getBalance() {
-    return `Ваш баланс: ${this.balance}` ;
+    return `Ваш баланс: ${this.balance}`;
   },
 
   getTransactionDetails(id) {
@@ -62,7 +62,7 @@ const account = {
         total += transaction.amount;
       }
     }
-    return `Количество средств типа ${type}: ${total}` ;
+    return `Количество средств типа ${type}: ${total}`;
   },
 };
 
