@@ -1,3 +1,36 @@
+const amountInputRef = document.querySelector('.amount');
+const buttonDepositRef = document.querySelector('.deposit');
+const buttonWithdrawRef = document.querySelector('.withdraw');
+const buttonBalanceRef = document.querySelector('.balance');
+const transactionIdInputRef = document.querySelector('.transactionId');
+const buttonSearchRef = document.querySelector('.search');
+const buttonDepositTotalRef = document.querySelector('.depositTotal');
+const buttonWithdrawTotalRef = document.querySelector('.withdrawTotal');
+
+buttonDepositRef.addEventListener('click', () => {
+  account.deposit(Number(amountInputRef.value));
+});
+
+buttonWithdrawRef.addEventListener('click', () => {
+  account.withdraw(Number(amountInputRef.value));
+});
+
+buttonBalanceRef.addEventListener('click', () => {
+  console.log(account.getBalance());
+});
+
+buttonSearchRef.addEventListener('click', () => {
+  console.log(account.getTransactionDetails(transactionIdInputRef.value));
+});
+
+buttonDepositTotalRef.addEventListener('click', () => {
+  console.log(account.getTransactionTotal(Transaction.DEPOSIT));
+});
+
+buttonWithdrawTotalRef.addEventListener('click', () => {
+  console.log(account.getTransactionTotal(Transaction.WITHDRAW));
+});
+
 const Transaction = {
   DEPOSIT: 'deposit',
   WITHDRAW: 'withdraw',
@@ -66,15 +99,3 @@ const account = {
   },
 };
 
-account.deposit(5);
-account.deposit(5);
-console.log(account.getBalance());
-account.withdraw(30);
-console.log(account.getBalance());
-account.deposit(10);
-console.log(account.getBalance());
-account.withdraw(10);
-console.log(account.getBalance());
-console.log(account.getTransactionDetails('_4kkj0nxbx'));
-console.log(account.getTransactionDetails('_4kkj0nxx'));
-console.log(account.getTransactionTotal(Transaction.WITHDRAW));
