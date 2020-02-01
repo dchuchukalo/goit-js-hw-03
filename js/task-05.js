@@ -29,7 +29,7 @@ const products = [
 const getAllPropValues = function(arr, prop) {
   let outputArray = [];
   for (const product of products) {
-    if (product[prop] !== undefined) {
+    if (product[prop]) {
       outputArray.push(product[prop]);
     }
   }
