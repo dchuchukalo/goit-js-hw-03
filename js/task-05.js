@@ -26,13 +26,23 @@ const products = [
 
 // Вариант 2
 
+// const getAllPropValues = function(arr, prop) {
+//   let outputArray = [];
+//   for (const product of products) {
+//     if (product[prop]) {
+//       outputArray.push(product[prop]);
+//     }
+//   }
+//   return outputArray;
+// };
+
 const getAllPropValues = function(arr, prop) {
   let outputArray = [];
-  for (const product of products) {
-    if (product[prop]) {
-      outputArray.push(product[prop]);
+  arr.forEach(element => {
+    if (element[prop]) {
+      outputArray.push(element[prop]);
     }
-  }
+  });
   return outputArray;
 };
 
