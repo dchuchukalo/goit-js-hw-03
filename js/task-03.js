@@ -43,6 +43,17 @@
 
 // Меня осенило после второго вебинара. Решил не удалять предыдущие варианты.
 
+// const findBestEmployee = function(employees) {
+//   const greastestValue = Math.max(...Object.values(employees));
+//   let greastestEmploee = [];
+//   for (const key of Object.keys(employees)) {
+//     if (employees[key] === greastestValue) {
+//       greastestEmploee.push(key);
+//     }
+//   }
+//   return greastestEmploee;
+// };
+
 const findBestEmployee = function(employees) {
   const greastestValue = Math.max(...Object.values(employees));
   let greastestEmploee = [];
@@ -53,6 +64,23 @@ const findBestEmployee = function(employees) {
   }
   return greastestEmploee;
 };
+
+
+
+// const findBestEmployee = function(employees) {
+//   let greatestEmployee = Object.entries(employees)[0];
+//   Object.entries(employees).forEach(employee => {
+//     if (employee[1] > greatestEmployee[1]) {
+//       greatestEmployee = employee;
+//     }
+//   });
+//   return greatestEmployee[0];
+// };
+
+/*
+ * Посмотрите в консоли из каких двух элементов состоит каждый подмассив.
+ * Первый элемент это ключ свойства, второй это значение.
+ */
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.

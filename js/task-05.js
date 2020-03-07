@@ -36,14 +36,10 @@ const products = [
 //   return outputArray;
 // };
 
-const getAllPropValues = function(arr, prop) {
-  let outputArray = [];
-  arr.forEach(element => {
-    if (element[prop]) {
-      outputArray.push(element[prop]);
-    }
-  });
-  return outputArray;
+const getAllPropValues = (arr, prop) => {
+  return arr
+    .filter(product => product[prop] !== undefined)
+    .map(product => product[prop]);
 };
 
 /*

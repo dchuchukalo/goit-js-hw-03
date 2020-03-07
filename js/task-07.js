@@ -80,22 +80,34 @@ const account = {
   },
 
   getTransactionDetails(id) {
-    for (const transaction of this.transactions) {
-      if (transaction.id === id) {
-        return transaction;
-      }
-    }
-    return 'Транзакция не найдена!';
+    // for (const transaction of this.transactions) {
+    //   if (transaction.id === id) {
+    //     return transaction;
+    //   }
+    // }
+    // return 'Транзакция не найдена!';
+
+    const searchResult = this.transactions.find(
+      transaction => transaction.id === id,
+    );
+    return searchResult === undefined ? 'Транзакция не найдена!' : searchResult;
   },
 
   getTransactionTotal(type) {
-    let total = 0;
-    for (const transaction of this.transactions) {
-      if (transaction.type === type) {
-        total += transaction.amount;
-      }
-    }
+    // let total = 0;
+    // for (const transaction of this.transactions) {
+    //   if (transaction.type === type) {
+    //     total += transaction.amount;
+    //   }
+    // }
+    // return `Количество средств типа ${type}: ${total}`;
+
+    const total = this.transactions
+      .filter(transaction => transaction.type === type)
+      .reduce(
+        (totalAmount, transaction) => totalAmount + transaction.amount,
+        0,
+      );
     return `Количество средств типа ${type}: ${total}`;
   },
 };
-

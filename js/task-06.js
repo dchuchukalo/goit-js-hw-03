@@ -17,11 +17,9 @@ const products = [
 
 const calculateTotalPrice = function(allProdcuts, productName) {
   let total = 0;
-  products.forEach(product => {
-    if (product.name === productName) {
-      total = product.price * product.quantity;
-    }
-  });
+  products
+    .filter(product => product.name === productName)
+    .forEach(product => (total = product.price * product.quantity));
   return total;
 };
 
