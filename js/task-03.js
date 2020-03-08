@@ -54,28 +54,26 @@
 //   return greastestEmploee;
 // };
 
-const findBestEmployee = function(employees) {
-  const greastestValue = Math.max(...Object.values(employees));
-  let greastestEmploee = [];
-  for (const key of Object.keys(employees)) {
-    if (employees[key] === greastestValue) {
-      greastestEmploee.push(key);
-    }
-  }
-  return greastestEmploee;
-};
-
-
-
 // const findBestEmployee = function(employees) {
-//   let greatestEmployee = Object.entries(employees)[0];
-//   Object.entries(employees).forEach(employee => {
-//     if (employee[1] > greatestEmployee[1]) {
-//       greatestEmployee = employee;
+//   const greastestValue = Math.max(...Object.values(employees));
+//   let greastestEmploee = [];
+//   for (const key of Object.keys(employees)) {
+//     if (employees[key] === greastestValue) {
+//       greastestEmploee.push(key);
 //     }
-//   });
-//   return greatestEmployee[0];
+//   }
+//   return greastestEmploee;
 // };
+
+const findBestEmployee = function(employees) {
+  let [searchKey, searchValue] = ['', 0];
+  Object.entries(employees).forEach(([key, value]) => {
+    if (value > searchValue) {
+      [searchKey, searchValue] = [key, value];
+    }
+  });
+  return searchKey;
+};
 
 /*
  * Посмотрите в консоли из каких двух элементов состоит каждый подмассив.

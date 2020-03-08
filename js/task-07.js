@@ -93,7 +93,7 @@ const account = {
     return searchResult === undefined ? 'Транзакция не найдена!' : searchResult;
   },
 
-  getTransactionTotal(type) {
+  getTransactionTotal(typeTrans) {
     // let total = 0;
     // for (const transaction of this.transactions) {
     //   if (transaction.type === type) {
@@ -103,11 +103,11 @@ const account = {
     // return `Количество средств типа ${type}: ${total}`;
 
     const total = this.transactions
-      .filter(transaction => transaction.type === type)
+      .filter(({ type }) => type === typeTrans)
       .reduce(
-        (totalAmount, transaction) => totalAmount + transaction.amount,
+        (totalAmount, {amount}) => totalAmount + amount,
         0,
       );
-    return `Количество средств типа ${type}: ${total}`;
+    return `Количество средств типа ${typeTrans}: ${total}`;
   },
 };
